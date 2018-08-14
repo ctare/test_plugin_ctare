@@ -11,7 +11,7 @@ class TestPlugin:
 
     @neovim.command("TestCommand", range='', nargs='*')
     def test_command(self, args, rng):
-        self.nvim.current.line = ('Command with args: {}, range: {}'.format(args, rng))
+        self.nvim.current.line = ('Hello with args: {}, range: {}'.format(args, rng))
 
     @neovim.autocmd('BufEnter', pattern='*.py', eval='expand("<afile>")', sync=True)
     def on_bufenter(self, filename):
